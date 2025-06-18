@@ -1,0 +1,19 @@
+[package]
+name = 'hello_world_wasmer'
+version = '0.1.0'
+description = 'Description for package hello_world_wasmer'
+
+# See more keys and definitions at https://docs.wasmer.io/registry/manifest
+
+[[module]]
+name = 'hello_world_wasmer'
+source = 'target/wasm32-wasmer-wasi/release/hello_world_wasmer.wasm'
+abi = 'wasi'
+
+[module.interfaces]
+wasi = '0.1.0-unstable'
+
+[[command]]
+name = 'hello_world_wasmer'
+module = 'hello_world_wasmer'
+runner = 'wasi'
